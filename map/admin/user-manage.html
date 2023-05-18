@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+
+<head>
+	<link rel="icon" href="../images/admin-icon.png">
+	<title>崧糕地圖小幫手管理後臺-會員管理</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="../assets/css/noscript.css" />
+	</noscript>
+
+</head>
+
+<body class="is-preload" onload="onload()">
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+
+				<!-- Logo -->
+				<a href="../admin/" class="logo">
+					<span class="symbol"><img src="../images/admin-icon.png" alt="" /></span><span
+						class="title">崧糕地圖小幫手管理後臺-會員管理</span>
+				</a>
+				<br>
+				<label id="login_info"></label>
+				<div id="logout"></div>
+				<hr>
+			</div>
+		</header>
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+				<!-- 建立帳號 -->
+				<h1>建立帳號</h1>
+				<h2>請輸入欲建立的帳號</h2>
+				<input type="text" id="admin_reg_account">
+				<br>
+				<h2>請輸入欲建立的顯示名字</h2>
+				<input type="text" id="admin_reg_name">
+				<br>
+				<h2>請輸入欲建立的密碼</h2>
+				<input type="text" id="admin_reg_password">
+				<br>
+				<h2>請輸入欲建立帳號的角色</h2>
+				<p>(僅可輸入admin/editor/user)</p>
+				<p>*註:admin管理員/editor編輯人員/user普通使用者</p>
+				<input type="text" id="admin_reg_role">
+				<br>
+				<button onclick="admin_reg_btn()">確定註冊</button>
+				<br><br>
+				<!-- 帳號修改 -->
+				<h1>帳號修改</h1>
+				<h2>請輸入使用者帳號</h2>
+				<input type="text" id="search_account">
+				<br>
+				<button onclick="user_search()">查詢</button>
+				<br> <br>
+				<h3>名字</h3>
+				<input type="text" id="manage_user_name">
+				<br>
+				<h3>組別</h3>
+				<p>(admin為管理員 editor為編輯人員 user為普通使用者)</p>
+				<input type="text" id="manage_user_role">
+				<br>
+				<button onclick="reset_password()">重置密碼</button>
+				<button onclick="admin_edit_user_btn()">確定修改</button>
+			</div>
+		</div>
+	</div>
+	<!-- Scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/browser.min.js"></script>
+	<script src="../assets/js/breakpoints.min.js"></script>
+	<script src="../assets/js/util.js"></script>
+	<script src="../assets/js/main.js"></script>
+	<script src="../assets/js/admin.js"></script>
+	<script src="../assets/js/user-manage.js"></script>
+	<!-- Import the associated firebase lib which the order is fixed. -->
+	<script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-storage.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
+	<!-- Set the firebsae config and initialize it. -->
+	<script defer src="../assets/js/init-firebase.js"></script>
+	<script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+	<script src="../assets/js/jquery.md5.js"></script>
+</body>

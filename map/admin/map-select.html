@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+
+<head>
+	<link rel="icon" href="../images/admin-icon.png">
+	<title>崧糕地圖小幫手管理後臺-選單修改</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="../assets/css/noscript.css" />
+	</noscript>
+
+</head>
+
+<body class="is-preload" onload="onload(),onload2()">
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+
+				<!-- Logo -->
+				<a href="../admin/" class="logo">
+					<span class="symbol"><img src="../images/admin-icon.png" alt="" /></span><span
+						class="title">崧糕地圖小幫手管理後臺-選單修改</span>
+				</a>
+				<br>
+				<label id="login_info"></label>
+				<div id="logout"></div>
+				<hr>
+			</div>
+		</header>
+
+		<!-- Main -->
+		<div id="main">
+			<!-- 內容 -->
+			<div class="inner">
+				<h2>選單預覽</h2>
+				<form method="post" action="#">
+					<div class="fields">
+						<div class="field half">
+							<label>請選擇起始點</label>
+							<select id="code1">
+								<option value="">請選擇起始點</option>
+							</select>
+							<br>
+						</div>
+						<div class="field half">
+
+							<label>請選擇目的地</label>
+							<select id="code2">
+								<option value="">請選擇目的地</option>
+							</select>
+							<br>
+						</div>
+					</div>
+				</form>
+
+				<h2>1.選單順序修改</h2>
+				<label>起始點選單順序</label>
+				<p>(例如: A常用,A01校門口)</p>
+				<input type="text" id="map-select-start" placeholder="請輸入地點完整名字(非代號)">
+				<br>
+				<label>目的地選單</label>
+				<p>(例如: A購物,A01早餐部,A02合作社,A03自助餐,B處室,B01學務處)</p>
+				<input type="text" id="map-select-end" placeholder="請輸入地點完整名字(非代號)">
+				<br>
+				<button onclick="map_select_sequence()">確定修改</button>
+				<br><br><br><br>
+				<h2>2.增加/修改選單內容</h2>
+				<label>輸入要顯示的名稱</label>
+				<p>例如:A01早餐部</p>
+				<input type="text" placeholder="請輸入地點完整名字(非代號)" id="map_select_name">
+				<br>
+				<div class="col-4 col-12-small" onclick="change_map_select()">
+					<input type="radio" id="demo-priority-low" name="map_check" value="start" checked>
+					<label for="demo-priority-low">起始點</label>
+				</div>
+				<div class="col-4 col-12-small" onclick="change_map_select()">
+					<input type="radio" id="demo-priority-normal" name="map_check" value="end">
+					<label for="demo-priority-normal">目的地</label>
+				</div>
+				<button onclick="map_select_search()">查詢</button>
+				<br><br>
+				<h2>地點代號</h2>
+				<p>例如:A01</p>
+				<label>!!如果要輸入大標籤這邊輸入 disabled !!</label>
+				<input type="text" id="map_select_value">
+				<br>
+				<button onclick="map_select_edit()">確定修改/增加(要先按查詢才可以修改喔!)</button>
+			</div>
+		</div>
+	</div>
+	<!-- Scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/browser.min.js"></script>
+	<script src="../assets/js/breakpoints.min.js"></script>
+	<script src="../assets/js/util.js"></script>
+	<script src="../assets/js/main.js"></script>
+	<script src="../assets/js/admin.js"></script>
+	<script src="../assets/js/map-select.js"></script>
+	<!-- Import the associated firebase lib which the order is fixed. -->
+	<script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-storage.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
+	<!-- Set the firebsae config and initialize it. -->
+	<script defer src="../assets/js/init-firebase.js"></script>
+	<script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+	<script src="../assets/js/jquery.md5.js"></script>
+</body>

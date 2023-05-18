@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+
+<head>
+	<link rel="icon" href="../images/admin-icon.png">
+	<title>崧糕地圖小幫手管理後臺-資料庫修改</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="../assets/css/noscript.css" />
+	</noscript>
+
+</head>
+
+<body class="is-preload" onload="onload()">
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+
+				<!-- Logo -->
+				<a href="../admin/" class="logo">
+					<span class="symbol"><img src="../images/admin-icon.png" alt="" /></span><span
+						class="title">崧糕地圖小幫手管理後臺-網站設定</span>
+				</a>
+				<br>
+				<label id="login_info"></label>
+				<div id="logout"></div>
+				<hr>
+			</div>
+		</header>
+
+		<!-- Main -->
+		<div id="main">
+			<!-- 內容 -->
+			<div class="inner" id="search">
+				<!-- 查詢 -->
+				<h1>資料庫內容修改</h1>
+				<form method="post" action="#">
+					<div class="fields">
+						<div class="field">
+							<label>請輸入地點代碼(起始點+目的地)</label>
+							<input type="text" id="code">
+						</div>
+					</div>
+				</form>
+				<button id="submit">搜尋</button>
+			</div>
+			<br>
+			<!-- 結果 -->
+			<div class="inner">
+				<div id="title_div"></div>
+				<br>
+				<br>
+				<div id="text"></div>
+				<br>
+				<div id="submit_div"></div>
+			</div>
+		</div>
+	</div>
+	<!-- Scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/browser.min.js"></script>
+	<script src="../assets/js/breakpoints.min.js"></script>
+	<script src="../assets/js/util.js"></script>
+	<script src="../assets/js/main.js"></script>
+	<script src="../assets/js/admin.js"></script>
+	<!-- Import the associated firebase lib which the order is fixed. -->
+	<script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-storage.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
+	<!-- Set the firebsae config and initialize it. -->
+	<script defer src="../assets/js/init-firebase.js"></script>
+	<script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+	<script src="../assets/js/jquery.md5.js"></script>
+</body>

@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+
+<head>
+	<link rel="icon" href="../images/admin-icon.png">
+	<title>崧糕地圖小幫手管理後臺-上傳圖片</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="../assets/css/noscript.css" />
+	</noscript>
+
+</head>
+
+<body class="is-preload" onload="onload()">
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+
+				<!-- Logo -->
+				<a href="../admin/" class="logo">
+					<span class="symbol"><img src="../images/admin-icon.png" alt="" /></span><span
+						class="title">崧糕地圖小幫手管理後臺-上傳圖片</span>
+				</a>
+				<br>
+				<label id="login_info"></label>
+				<div id="logout"></div>
+				<hr>
+			</div>
+		</header>
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+				<h2>進度條:</h2>
+				<progress value="0" max="100" id="uploader">0%</progress></br>
+				<a href="https://www.iloveimg.com/zh-tw/compress-image/compress-jpg" target="_blank">先幫我壓縮圖片再上傳!(點我進入)</a>
+				<br>
+				<input type="file" value="upload" id="uploadBtn"></br>
+				<div id="msg"></div>
+				<br>
+				<h3>檔案名稱</h3>
+				<input type="text" id="file_info">
+				<br>
+				<span class="image main img_upload_pre map_real_photo"></span>
+			</div>
+		</div>
+	</div>
+	<!-- Scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/browser.min.js"></script>
+	<script src="../assets/js/breakpoints.min.js"></script>
+	<script src="../assets/js/util.js"></script>
+	<script src="../assets/js/main.js"></script>
+	<script src="../assets/js/admin.js"></script>
+	<!-- Import the associated firebase lib which the order is fixed. -->
+	<script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-storage.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
+	<!-- Set the firebsae config and initialize it. -->
+	<script defer src="../assets/js/init-firebase.js"></script>
+	<script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+	<script src="../assets/js/jquery.md5.js"></script>
+	<script src="../assets/js/upload.js"></script>
+</body>

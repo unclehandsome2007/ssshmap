@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+
+<head>
+	<link rel="icon" href="../images/logo_32x32.png">
+	<title>崧糕地圖小幫手-查詢頁面</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+	<link rel="stylesheet" type="text/css" href="assets/css/loading.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/announcement.css" />
+</head>
+
+<body class="is-preload" onload="onload()">
+	<!-- 遮罩空間 -->
+	<div id="loading_div">
+		<div aria-hidden="true"
+			style="z-index: 1000; position: fixed; inset: 0px; background-color: rgba(255, 255, 255, 1); -webkit-tap-highlight-color: transparent;">
+		</div>
+		<div class="spinner" style="z-index: 1000; position:fixed; top:30%;right:0;left:0;">
+			<div class="bounce1"></div>
+			<div class="bounce2"></div>
+			<div class="bounce3"></div>
+		</div>
+	</div>
+	<!-- Wrapper -->
+	<div id="announcement_top"></div>
+	<div id="wrapper">
+		<!-- 公告 -->
+
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+
+				<!-- Logo -->
+				<a href="/map/" class="logo">
+					<span class="symbol"><img src="images/logo_64x64.png" alt="" /></span><span class="title">崧糕地圖小幫手</span>
+				</a>
+				<div class="inner"><span id="login_btn"></span></div>
+				<div id="login_info"></div>
+				<hr>
+			</div>
+		</header>
+
+		<!-- Main -->
+		<div id="main">
+			<!-- 查詢 -->
+			<div class="inner" id="search">
+
+				<div class="fields">
+					<div class="field half" style="margin: auto;">
+						<span class="map_img image main"><img
+								src="https://firebasestorage.googleapis.com/v0/b/sssh-map.appspot.com/o/maps%2F1.png?alt=media&token=24e0790c-f736-4760-9723-2154c02a6e6c"
+								alt=""></span>
+					</div>
+					<div class="field half" style="margin: auto;">
+						<div class="col-4 col-12-small" onclick="change_map()">
+							<input type="radio" id="demo-priority-low" name="map_check" value="1" checked>
+							<label for="demo-priority-low">平面地圖</label>
+						</div>
+						<div class="col-4 col-12-small" onclick="change_map()">
+							<input type="radio" id="demo-priority-normal" name="map_check" value="2">
+							<label for="demo-priority-normal">平面地圖+文字</label>
+						</div>
+					</div>
+					<br>
+					<br>
+				</div>
+				<form method="post" action="#">
+					<div class="fields">
+						<div class="field half">
+
+							<label>請選擇起始點</label>
+							<select id="code1">
+								<option value="">請選擇起始點</option>
+							</select>
+							<br>
+						</div>
+						<div class="field half">
+
+							<label>請選擇目的地</label>
+							<select id="code2">
+								<option value="">請選擇目的地</option>
+							</select>
+							<br>
+
+						</div>
+					</div>
+				</form>
+				<a onclick="submit()" class="button" style="position: relative;margin-left:80%;">確定</a>
+			</div>
+			<!-- 結果 -->
+			<div class="inner">
+				<div id="title"></div>
+				<div id="result_content"></div>
+				<div id="search_button"></div>
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<section>
+					<h2>聯絡我們</h2>
+					<ul class="icons">
+						<!-- <li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li> -->
+						<!-- <li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li> -->
+						<!-- <li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+						<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+						<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li> -->
+						<li><a href="../index.html#contact" class="icon solid style2 fa-envelope" target="_blank"><span
+									class="label">聯絡我們</span></a></li>
+					</ul>
+				</section>
+				<ul class="copyright">
+					<li>&copy; 由34屆106班郭宗佑、林思佑製作</li>
+					<li>網站維護/架設:郭宗佑</li>
+					<li>內容製作、地圖繪製:林思佑</li>
+				</ul>
+			</div>
+		</footer>
+		<!-- Messenger 洽談外掛程式 Code -->
+		<div id="fb-root"></div>
+
+		<!-- Your 洽談外掛程式 code -->
+		<div id="fb-customer-chat" class="fb-customerchat">
+		</div>
+
+		<script>
+			var chatbox = document.getElementById('fb-customer-chat');
+			chatbox.setAttribute("page_id", "102581946042385");
+			chatbox.setAttribute("attribution", "biz_inbox");
+		</script>
+
+		<!-- Your SDK code -->
+		<script>
+			window.fbAsyncInit = function () {
+				FB.init({
+					xfbml: true,
+					version: 'v15.0'
+				});
+			};
+
+			(function (d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) return;
+				js = d.createElement(s); js.id = id;
+				js.src = 'https://connect.facebook.net/zh_TW/sdk/xfbml.customerchat.js';
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		</script>
+
+	</div>
+	<!-- Scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/submit.js"></script>
+	<!-- Import the associated firebase lib which the order is fixed. -->
+	<script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-storage.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
+	<!-- Set the firebsae config and initialize it. -->
+	<script defer src="assets/js/init-firebase.js"></script>
+	<script defer src="assets/js/announcement.js"></script>
+	<script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+	<script src="assets/js/jquery.md5.js"></script>
+</body>

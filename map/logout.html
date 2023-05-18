@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+
+<head>
+	<link rel="icon" href="../images/icon.webp">
+	<title>登出中...</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="assets/css/loading.css" />
+
+</head>
+
+<body>
+	<!-- 遮罩空間 -->
+	<div id="loading_div">
+		<div aria-hidden="true"
+			style="z-index: 1000; position: fixed; inset: 0px; background-color: rgba(255, 255, 255, 1); -webkit-tap-highlight-color: transparent;">
+		</div>
+		<div class="spinner" style="z-index: 1000; position:fixed; top:30%;right:0;left:0;">
+			<div class="bounce1"></div>
+			<div class="bounce2"></div>
+			<div class="bounce3"></div>
+		</div>
+	</div>
+	<!-- Scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+	<script src="assets/js/logout.js"></script>
+</body>
