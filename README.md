@@ -11,7 +11,7 @@
  
 * **如何使用**
   
-  >1.進入https://sssh-map.web.app/
+  1.進入https://sssh-map.web.app/
   
   2.點擊進入地圖
 
